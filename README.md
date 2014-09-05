@@ -1,14 +1,19 @@
 SMS Gulp Wrapper
 ================
 
+## Requirement
+
+```bash
+npm install gulp -g
+npm install gulp gulp-sms
+```
+
 ## Usage
 
 Write your **gulpfile.js** as below.
 
 ```js
-// gulpfile.js
-
-require('gulp-sms')([
+require('gulp-sms')(require('gulp'), [
     {
         type: 'less',
         paths: {

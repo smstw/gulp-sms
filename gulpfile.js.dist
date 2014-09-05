@@ -1,4 +1,4 @@
-require('gulp-sms')([
+require('gulp-sms')(require('gulp'), [
     {
         type: 'less',
         paths: {

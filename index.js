@@ -1,12 +1,12 @@
-var gulp = require('gulp');
 var smsLess = require('./lib/sms-less.js');
 
 /**
  * Initialize gulp tasks with SMS Gulp configuration
  *
+ * @param {Gulp}          gulp    Gulp instance
  * @param {Array<Object>} configs SMS Gulp configuration
  */
-module.exports = function sms(configs) {
+module.exports = function sms(gulp, configs) {
     var tasks = ['watch'];
 
     configs.forEach(function (config, index) {
@@ -14,7 +14,7 @@ module.exports = function sms(configs) {
 
         switch (config.type) {
             case 'less':
-                smsLess(taskName, config);
+                smsLess(gulp, taskName, config);
                 break;
         }
 
