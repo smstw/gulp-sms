@@ -1,0 +1,17 @@
+require('gulp-sms')([
+    {
+        type: 'less',
+        paths: {
+            include: [
+                __dirname + '/path/to/css/*.less'
+            ],
+            exclude: [
+                __dirname + '/path/to/css/_*.less'
+            ]
+        },
+        dest: {
+            type: 'normal',
+            dir: __dirname + '/path/to/css'
+        }
+    }
+]);
