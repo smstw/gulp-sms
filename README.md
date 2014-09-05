@@ -4,8 +4,13 @@ SMS Gulp Wrapper
 ## Requirement
 
 ```bash
+# If you want to use gulp locally in each project
 npm install gulp -g
 npm install gulp gulp-sms
+
+# If you want to use gulp globally
+npm install gulp gulp-sms -g
+npm link gulp gulp-sms
 ```
 
 ## Usage
@@ -79,7 +84,7 @@ var configs = [
 			]
 		},
 		dest: {
-			type: 'single-file',    // 'normal', 'single-file'
+			type: 'single-file',
 			dir: __dirname + '/path/to/css',
 			filename: 'screen.css'  // use only in type 'single-file'
 		}
