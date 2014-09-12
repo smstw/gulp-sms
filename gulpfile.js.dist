@@ -7,11 +7,15 @@ require('gulp-sms')(require('gulp'), [
             ],
             exclude: [
                 __dirname + '/path/to/css/_*.less'
+            ],
+            watching: [
+                __dirname + '/path/to/css/*.less'
             ]
         },
         dest: {
-            type: 'normal',
+            type: 'normal',     // 'normal' or 'single-file'
             dir: __dirname + '/path/to/css'
+            filename: 'compile.css'
         }
     }
 ]);

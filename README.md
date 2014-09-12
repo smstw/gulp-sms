@@ -27,6 +27,9 @@ require('gulp-sms')(require('gulp'), [
             ],
             exclude: [
                 __dirname + '/path/to/css/_*.less'
+            ],
+            watching: [
+                __dirname + '/path/to/css/*.less'
             ]
         },
         dest: {
@@ -55,7 +58,10 @@ var configs = [
 			],
 			exclude: [
 				__dirname + '/path/to/css/_*.less'
-			]
+			],
+            watching: [
+                __dirname + '/path/to/css/*.less'
+            ]
 		},
 		dest: {
 			type: 'normal',
@@ -81,7 +87,10 @@ var configs = [
 			],
 			exclude: [
 				__dirname + '/path/to/css/_*.less'
-			]
+			],
+            watching: [
+                __dirname + '/path/to/css/*.less'
+            ]
 		},
 		dest: {
 			type: 'single-file',

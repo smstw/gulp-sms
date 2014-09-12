@@ -24,7 +24,11 @@ module.exports = function sms(gulp, configs) {
     // Rerun the task when a file changes
     gulp.task('watch', function () {
         configs.forEach(function (config, index) {
-            var paths = [].concat(config.paths.include, config.paths.exclude);
+            var paths = [].concat(
+                config.paths.include || [],
+                config.paths.exclude || [],
+                config.paths.watching || []
+            );
             var taskName = config.type + index;
 
             gulp.watch(paths, [taskName]);
