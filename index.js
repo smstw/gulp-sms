@@ -1,4 +1,5 @@
 var smsLess = require('./lib/sms-less.js');
+var liveReload = require('gulp-livereload');
 
 /**
  * Initialize gulp tasks with SMS Gulp configuration
@@ -23,6 +24,8 @@ module.exports = function sms(gulp, configs) {
 
     // Rerun the task when a file changes
     gulp.task('watch', function () {
+        liveReload.listen();
+
         configs.forEach(function (config, index) {
             var paths = [].concat(
                 config.paths.include || [],
@@ -31,7 +34,7 @@ module.exports = function sms(gulp, configs) {
             );
             var taskName = config.type + index;
 
-            gulp.watch(paths, [taskName]);
+            gulp.watch(paths, [taskName]).on('change', liveReload.changed);
         });
     });
 
